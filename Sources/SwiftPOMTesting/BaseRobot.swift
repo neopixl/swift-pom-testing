@@ -24,7 +24,7 @@ open class BaseRobot {
     ///   - block: An optional filter can be used to determine whether or not an issue should be recorded.
     /// To prevent an issue from recorded, return true to handle it yourself.
     @available(macOS 14.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
-    @MainActor @preconcurrency public func performAccessibilityAudit(
+    @MainActor public func performAccessibilityAudit(
         for auditTypes: XCUIAccessibilityAuditType = .all,
         _ issueHandler: ((XCUIElement) throws -> Bool)? = nil
     ) throws {

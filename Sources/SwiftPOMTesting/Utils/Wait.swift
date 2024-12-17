@@ -7,8 +7,8 @@ public enum Wait {
     }
 
     /// Function that checks during a predefines time if an element exists or not
-    @MainActor @preconcurrency public static func waitForExistence(element: XCUIElement,
-                                                                   timeout: TimeInterval = 10) throws -> XCUIElement
+    @MainActor public static func waitForExistence(element: XCUIElement,
+                                                   timeout: TimeInterval = 10) throws -> XCUIElement
     {
         // Check if the element already exist (faster than waiting for existence)
         guard !(element.exists && element.isHittable) else {
