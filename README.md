@@ -62,36 +62,36 @@ class MyPage: BasePage {
 
 **Element getter methods**
 
-- `getButton`
-- `getTabBarButton`
-- `getTextField`
-- `getSecureTextField`
-- `getStaticText`
-- `getSwitch`
-- `getStepperMinusButton`
-- `getStepperPlusButton`
-- `getMenu`
-- `getNavigationBar`
-- `getBackButton`
-- `getKeyboardButton`
-- `getAlert`
-- `getAlertTitle`
-- `getAlertButton`
-- `getActivityIndicator`
-- `getPageIndicator`
-- `getCollectionView`
-- `getOtherElementsCount`
+- `getButton(_:timeout:in:)`
+- `getTabBarButton(_:timeout:in:)`
+- `getTextField(_:timeout:in:)`
+- `getSecureTextField(_:timeout:in:)`
+- `getStaticText(_:timeout:in:)`
+- `getSwitch(_:timeout:in:)`
+- `getStepperMinusButton(_:timeout:in:)`
+- `getStepperPlusButton(_:timeout:in:)`
+- `getMenu(_:timeout:in:)`
+- `getNavigationBar(_:timeout:)`
+- `getBackButton(timeout:)`
+- `getKeyboardButton(_:timeout:in:)`
+- `getAlert(_:timeout:)`
+- `getAlertTitle(_:timeout:)`
+- `getAlertButton(index:timeout:)`
+- `getActivityIndicator(_:timeout:in:)`
+- `getPageIndicator(timeout:in:)`
+- `getCollectionView(_:timeout:in:)`
+- `getOtherElementsCount(_:timeout:in:)`
 
 **Count methods**
 
-- `getStaticTextCount`
-- `getButtonCount`
-- `getOtherElementsCount`
+- `getStaticTextCount(matching:in:)`
+- `getButtonCount(matching:in:)`
+- `getOtherElementsCount(matching:in:)`
 
 **Utils methods**
 
-- `swipeDownScreen`
-- `swipeUpScreen`
+- `swipeDownScreen(timeout:)`
+- `swipeUpScreen(timeout:)`
 
 Please note to all those methods will wait for the targeted element
 to appear until a given number of seconds,

@@ -104,10 +104,9 @@ import XCTest
 
     /// Function that retrieves an element of type NavigationBar
     public func getNavigationBar(_ locator: UIElementDescriptor,
-                                 timeout: TimeInterval = Defaults.defaultTimeout,
-                                 in element: XCUIElement? = nil) throws -> XCUIElement
+                                 timeout: TimeInterval = Defaults.defaultTimeout) throws -> XCUIElement
     {
-        try Wait.waitForExistence(element: (element ?? app).navigationBars[locator.getId()],
+        try Wait.waitForExistence(element: app.navigationBars[locator.getId()],
                                   timeout: timeout)
     }
 
@@ -122,19 +121,17 @@ import XCTest
 
     /// Function that retrieves an element of type Alert
     public func getAlert(_ locator: UIElementDescriptor,
-                         timeout: TimeInterval = Defaults.defaultTimeout,
-                         in element: XCUIElement? = nil) throws -> XCUIElement
+                         timeout: TimeInterval = Defaults.defaultTimeout) throws -> XCUIElement
     {
-        try Wait.waitForExistence(element: (element ?? app).alerts[locator.getId()],
+        try Wait.waitForExistence(element: app.alerts[locator.getId()],
                                   timeout: timeout)
     }
 
     /// Function that retrieves the title element of a presented Alert
     public func getAlertTitle(_ locator: UIElementDescriptor,
-                              timeout: TimeInterval = Defaults.defaultTimeout,
-                              in element: XCUIElement? = nil) throws -> XCUIElement
+                              timeout: TimeInterval = Defaults.defaultTimeout) throws -> XCUIElement
     {
-        try Wait.waitForExistence(element: (element ?? app).alerts.element.staticTexts[locator.getId()],
+        try Wait.waitForExistence(element: app.alerts.element.staticTexts[locator.getId()],
                                   timeout: timeout)
     }
 
