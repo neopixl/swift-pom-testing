@@ -15,7 +15,7 @@ Import this package like any other regular SPM package,
 and add it to your UITest target.
 
 ```swift
-.package(url: "https://github.com/neopixl/swift-pom-testing", .upToNextMajor(from: "1.0.0"))
+.package(url: "https://github.com/neopixl/swift-pom-testing", .upToNextMajor(from: "1.1.1"))
 ```
 
 ## Usage
