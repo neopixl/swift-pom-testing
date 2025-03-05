@@ -216,17 +216,19 @@ import XCTest
     // MARK: - Utils
 
     /// Function that swipe down to close a presented screen
-    public func swipeDownScreen(timeout: TimeInterval = Defaults.defaultTimeout) throws {
+    public func swipeDownScreen(timeout: TimeInterval = Defaults.defaultTimeout,
+                                velocity: XCUIGestureVelocity = .fast) throws {
         let element = try Wait.waitForExistence(element: app.children(matching: .window).element(boundBy: 0),
                                                 timeout: timeout)
-        element.swipeDown(velocity: .fast)
+        element.swipeDown(velocity: velocity)
     }
 
     /// Function that swipe up the screen
-    public func swipeUpScreen(timeout: TimeInterval = Defaults.defaultTimeout) throws {
+    public func swipeUpScreen(timeout: TimeInterval = Defaults.defaultTimeout,
+                              velocity: XCUIGestureVelocity = .fast) throws {
         let element = try Wait.waitForExistence(element: app.children(matching: .window).element(boundBy: 0),
                                                 timeout: timeout)
-        element.swipeUp(velocity: .fast)
+        element.swipeUp(velocity: velocity)
     }
 }
 
