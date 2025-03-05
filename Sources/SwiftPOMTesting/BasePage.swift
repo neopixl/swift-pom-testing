@@ -57,11 +57,12 @@ import XCTest
     /// Function that retrieves an element of type Text
     public func getStaticText(_ locator: UIElementDescriptor,
                               timeout: TimeInterval = Defaults.defaultTimeout,
+                              checkHittable: Bool = false,
                               in element: XCUIElement? = nil) throws -> XCUIElement
     {
         try Wait.waitForExistence(element: (element ?? app).staticTexts[locator.getId()],
                                   timeout: timeout,
-                                  checkHittable: false)
+                                  checkHittable: checkHittable)
     }
 
     /// Function that retrieves an element of type Switch
@@ -130,11 +131,12 @@ import XCTest
 
     /// Function that retrieves the title element of a presented Alert
     public func getAlertTitle(_ locator: UIElementDescriptor,
-                              timeout: TimeInterval = Defaults.defaultTimeout) throws -> XCUIElement
+                              timeout: TimeInterval = Defaults.defaultTimeout,
+                              checkHittable: Bool = false) throws -> XCUIElement
     {
         try Wait.waitForExistence(element: app.alerts.element.staticTexts[locator.getId()],
                                   timeout: timeout,
-                                  checkHittable: false)
+                                  checkHittable: checkHittable)
     }
 
     /// Function to retrieves the first Button of a presented Alert
