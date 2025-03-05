@@ -8,7 +8,9 @@ public enum Wait {
     }
 
     /// Function that checks during a predefines time if an element exists or not
-    @MainActor static func waitForExistence(element: XCUIElement, timeout: TimeInterval) throws -> XCUIElement {
+    @MainActor static func waitForExistence(element: XCUIElement,
+                                            timeout: TimeInterval,
+                                            checkHittable: Bool = true) throws -> XCUIElement {
         // Check if the element already exists (faster than waiting for existence)
         guard !(element.exists && element.isHittable) else {
             print("Element \(element.identifier) exists")
@@ -24,8 +26,8 @@ public enum Wait {
             throw ElementError.notFound(element)
         }
 
-        // Chech if element is hittable
-        guard element.isHittable else {
+        // Chech if element is hittable, if needed
+        guard element.isHittable || !checkHittable else {
             print("Element \(element.identifier) exist, but is not hittable.")
             throw ElementError.notHittable(element)
         }

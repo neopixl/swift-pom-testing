@@ -60,7 +60,8 @@ import XCTest
                               in element: XCUIElement? = nil) throws -> XCUIElement
     {
         try Wait.waitForExistence(element: (element ?? app).staticTexts[locator.getId()],
-                                  timeout: timeout)
+                                  timeout: timeout,
+                                  checkHittable: false)
     }
 
     /// Function that retrieves an element of type Switch
@@ -132,7 +133,8 @@ import XCTest
                               timeout: TimeInterval = Defaults.defaultTimeout) throws -> XCUIElement
     {
         try Wait.waitForExistence(element: app.alerts.element.staticTexts[locator.getId()],
-                                  timeout: timeout)
+                                  timeout: timeout,
+                                  checkHittable: false)
     }
 
     /// Function to retrieves the first Button of a presented Alert
